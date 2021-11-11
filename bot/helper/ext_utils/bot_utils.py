@@ -21,15 +21,15 @@ PAGE_NO = 1
 
 
 class MirrorStatus:
-    STATUS_UPLOADING = "Uploading."
-    STATUS_DOWNLOADING = "Downloading."
-    STATUS_CLONING = "Cloning."
-    STATUS_WAITING = "Queued."
-    STATUS_FAILED = "Failed.Cleaning Download."
-    STATUS_PAUSE = "Paused."
-    STATUS_ARCHIVING = "Archiving."
-    STATUS_EXTRACTING = "Extracting."
-    STATUS_SPLITTING = "Splitting."
+    STATUS_UPLOADING = "Uploading...📤"
+    STATUS_DOWNLOADING = "Downloading...📥"
+    STATUS_CLONING = "Cloning...🔃"
+    STATUS_WAITING = "Queued...📝"
+    STATUS_FAILED = "Failed 🚫. Cleaning download"
+    STATUS_PAUSE = "Paused...⏸"
+    STATUS_ARCHIVING = "Archiving...🔐"
+    STATUS_EXTRACTING = "Extracting...📂"
+    STATUS_SPLITTING = "Splitting...🪓"
 
 SIZE_UNITS = ['B', 'KB', 'MB', 'GB', 'TB', 'PB']
 
@@ -103,8 +103,8 @@ def get_progress_bar_string(status):
     p = 0 if total == 0 else round(completed * 100 / total)
     p = min(max(p, 0), 100)
     cFull = p // 9
-    p_str = '▰' * cFull
-    p_str += '▱' * (11 - cFull)
+    p_str = '💜' * cFull
+    p_str += '♡' * (11 - cFull)
     p_str = f"[{p_str}]"
     return p_str
 
